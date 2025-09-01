@@ -1,8 +1,8 @@
 //
 //  FrameworkDetailView.swift
-//  AppleFrameworkDemo
+//  AppleDemo_Project
 //
-//  Created by JustMac on 05/08/25.
+//  Created by JustMac on 18/08/25.
 //
 
 import SwiftUI
@@ -16,18 +16,7 @@ struct FrameworkDetailView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                
-                Button {
-                    isShowingDetailView = false
-                } label: {
-                    Image(systemName: "xmark")
-                        .foregroundColor(Color(.label))
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44)
-                }
-            }.padding()
+            XDismissButton(isShowingDetailView: $isShowingDetailView)
             
             Spacer()
             
@@ -46,7 +35,7 @@ struct FrameworkDetailView: View {
             }
            
         }
-        .sheet(isPresented: $isShowingSafariView, content: {
+        .fullScreenCover(isPresented: $isShowingSafariView, content: {
             SafariView(url: URL(string: framework.urlString) ?? URL(string: "www.apple.com")!)
         })
     }

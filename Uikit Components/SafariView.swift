@@ -1,8 +1,8 @@
 //
 //  SafariView.swift
-//  AppleFrameworkDemo
+//  AppleDemo_Project
 //
-//  Created by JustMac on 13/08/25.
+//  Created by JustMac on 18/08/25.
 //
 
 import SwiftUI
